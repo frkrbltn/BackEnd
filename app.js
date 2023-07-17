@@ -3,8 +3,9 @@ const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose  = require("mongoose");
+require("dotenv/config");
 
-mongoose.connect("mongodb+srv://frkrbltn2332:Valarmorghulis23.@cluster0.c8iqbem.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://frkrbltn2332:${process.env.MONGODB_PASSWORD}@cluster0.c8iqbem.mongodb.net/?retryWrites=true&w=majority");
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/order");
 
